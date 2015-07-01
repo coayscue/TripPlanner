@@ -16,13 +16,20 @@ router.get('/', function(req, res, next) {
     objects.thingsToDo = thingsToDo;
     return objects;
   }).then(function(objects){
-    res.json(objects);
+    // res.json(objects);
     // console.log(res.header);
-    //res.render("index", {objects: objects});
-  }).catch(function(err){
+    res.render("index", {objects: objects});
+  }).then(null, function(err){
+    console.log(err);
     next(err);
   });
 
 });
+
+
+// router.get('./bower_components/:path', function (req, res, next) {
+//   res.send()
+// })
+
 
 module.exports = router;

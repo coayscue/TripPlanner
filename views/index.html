@@ -1,21 +1,17 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>tripPlanner</title>
-  </head>
-  <body>
-    <ul>
-      {% for category in objects %}
-        <li>{{category}}
+{% extends "layout.html" %}
+
+{% block content %}
+<ul style="list-style: none; display: block-inline;">
+      {% for key,category in objects %}
+        <li> {{key}}
           <select>
-            {% for data in objects[category] %}
-              <option value={{data}}>{{data}}</option> 
+            {% for data in category %}
+              <option value={{data.name}}>{{data.name}}</option> 
             {% endfor %}
           </select>
         </li>
       {% endfor %}
     </ul>
-  </body>
-</html> -->
+{% endblock %}
 
-{{objects}}
+
