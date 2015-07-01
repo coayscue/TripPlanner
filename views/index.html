@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<ul style="list-style: none; display: block-inline;">
+<ul id="list" class="col-lg-4 col-sm-6">
       {% for key,category in objects %}
         <li> {{key}}
           <select>
